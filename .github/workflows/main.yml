@@ -1,0 +1,64 @@
+
+name: TOSCA CI
+
+ 
+
+on:
+
+  workflow_dispatch
+
+ 
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+ 
+
+    steps:
+
+    - name: Checkout Repository
+
+      uses: actions/checkout@v2
+
+ 
+
+    - name: Setup TOSCA Environment
+
+      run: |
+
+        # Set up your TOSCA environment here, such as installing the TOSCA interpreter or orchestrator
+
+        # Example:
+
+         pip install toscaparser
+
+ 
+
+    - name: Validate TOSCA Templates
+
+      run: |
+
+        # Validate your TOSCA templates here
+
+        # Example:
+
+         toscaparser -p 
+
+ 
+
+    - name: Run Tests
+
+      run: |
+
+        # Execute your TOSCA tests here
+
+        # Example:
+
+         toscaparser -t path/to/tests
+
+ 
+
+    # Add more steps as needed, such as deployment, notifications, etc.
